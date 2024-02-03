@@ -11,7 +11,7 @@ const [errorer, btn, reset, count] = [
 	/** @type {HTMLParagraphElement} */ (document.getElementById("count")),
 ];
 
-errorer.innerHTML = JSON.stringify(app.initData);
+errorer.innerHTML = JSON.stringify(app.initDataUnsafe);
 window.addEventListener("error", e => setError(e.toString()));
 
 btn.addEventListener("click", () => {
