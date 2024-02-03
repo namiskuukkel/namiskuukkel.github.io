@@ -2,7 +2,7 @@ const app = window.Telegram.WebApp;
 
 app.ready();
 app.expand();
-
+console.log(app.initData);
 const [errorer, btn, reset, count] = [
 	/** @type {HTMLParagraphElement} */ (document.getElementById("errors")),
 	/** @type {HTMLButtonElement} */ (document.getElementById("click")),
