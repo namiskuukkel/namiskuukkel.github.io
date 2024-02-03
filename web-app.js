@@ -4,7 +4,6 @@ const storage = app.CloudStorage;
 app.ready();
 app.expand();
 
-app.sendData(JSON.stringify({"moi": 1}));
 const [errorer, btn, reset, count] = [
 	/** @type {HTMLParagraphElement} */ (document.getElementById("errors")),
 	/** @type {HTMLButtonElement} */ (document.getElementById("click")),
@@ -30,7 +29,6 @@ storage.getItem("clicks", (error, value) => {
 });
 
 btn.addEventListener("click", () => {
-	btn.setAttribute("disabled", "");
 	storage.getItem("clicks", (error, value) => {
 		if (error) return setError({ error, type: typeof error, value });
 		const c = parse(error, value) + 1;
@@ -40,6 +38,7 @@ btn.addEventListener("click", () => {
 			btn.removeAttribute("disabled");
 		});
 	});
+	app.sendData(JSON.stringify({"moi": 1}));
 });
 
 reset.addEventListener("click", () => {
